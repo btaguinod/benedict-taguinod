@@ -1,17 +1,14 @@
-import { Geist, Geist_Mono, Noto_Sans, Playfair_Display } from "next/font/google"
+import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google"
 
 import "@workspace/ui/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@workspace/ui/lib/utils";
 
-const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
+const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-heading', axes: ['opsz', 'SOFT', 'WONK'] });
 
-const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'})
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-sans' });
 
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export default function RootLayout({
   children,
@@ -22,7 +19,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable, playfairDisplayHeading.variable)}
+      className={cn("antialiased", jetbrainsMono.variable, "font-sans", dmSans.variable, fraunces.variable)}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
