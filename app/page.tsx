@@ -177,8 +177,7 @@ export default function Page() {
           >
             HPE
           </a>
-          , I developed cloud-native applications — Kubernetes, Helm, and Go
-          services — for scaling enterprises.
+          , I developed cloud-native applications for scaling enterprises.
         </p>
         <p className="text-muted-foreground">
           I love learning and I love building. Right now, my specialties are
