@@ -84,9 +84,9 @@ export default function Page() {
           Benedict Taguinod.
         </h1>
         <p ref={taglineRef} className="text-xl text-muted-foreground mb-8 leading-relaxed">
-          Web + cloud engineer.{" "}
-          <span className="text-foreground">Education enthusiast.</span>{" "}
-          Aspiring entrepreneur.
+          web + cloud engineer.{" "}
+          <span className="text-foreground">education enthusiast.</span>{" "}
+          aspiring entrepreneur.
         </p>
         <div ref={heroButtonsRef} className="flex flex-wrap gap-3">
           <Button

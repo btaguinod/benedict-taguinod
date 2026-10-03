@@ -43,7 +43,7 @@ Full-stack infrastructure + mission: deep cloud and systems engineering (Go micr
 
 - Name: Benedict Taguinod (never abbreviated to Ben)
 - Voice: direct, grounded, no marketing language — the copy describes real work with real numbers where they exist
-- Tagline in use: "Web + cloud engineer. Education enthusiast. Aspiring entrepreneur."
+- Tagline in use: "web + cloud engineer. education enthusiast. aspiring entrepreneur." (all lowercase)
 
 ## Evidence on Hand
 
