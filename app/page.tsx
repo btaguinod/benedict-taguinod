@@ -4,6 +4,7 @@ import { useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
+import { ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
@@ -14,6 +15,7 @@ export default function Page() {
   const nameRef = useRef<HTMLHeadingElement>(null)
   const taglineRef = useRef<HTMLParagraphElement>(null)
   const heroButtonsRef = useRef<HTMLDivElement>(null)
+  const scrollCueRef = useRef<HTMLAnchorElement>(null)
 
   useGSAP(
     () => {
@@ -24,6 +26,7 @@ export default function Page() {
         gsap.set(nameRef.current, { opacity: 0, y: 14 })
         gsap.set(taglineRef.current, { opacity: 0, y: 10 })
         gsap.set(heroButtonsRef.current, { opacity: 0 })
+        gsap.set(scrollCueRef.current, { opacity: 0 })
 
         const tl = gsap.timeline({ delay: 0.1 })
 
@@ -47,6 +50,11 @@ export default function Page() {
             heroButtonsRef.current,
             { opacity: 1, duration: 0.5, ease: "expo.out" },
             "-=0.4"
+          )
+          .to(
+            scrollCueRef.current,
+            { opacity: 1, duration: 0.7, ease: "expo.out" },
+            "+=0.25"
           )
 
         gsap.utils.toArray<HTMLElement>("[data-section]").forEach((section) => {
@@ -84,7 +92,7 @@ export default function Page() {
         }}
       />
       {/* Hero — the board header */}
-      <section className="mx-auto flex min-h-svh max-w-2xl flex-col justify-center px-6 py-20">
+      <section className="relative mx-auto flex min-h-svh max-w-2xl flex-col justify-center px-6 py-20">
         <p
           ref={introRef}
           data-js-hide
@@ -146,10 +154,27 @@ export default function Page() {
             Email
           </Button>
         </div>
+        <a
+          ref={scrollCueRef}
+          href="#about"
+          data-js-hide
+          className="absolute inset-x-6 bottom-8 flex w-fit flex-col gap-1.5 font-mono text-xs text-muted-foreground"
+        >
+          <span className="flex w-fit items-center gap-2">
+            check out the menu!
+            <span aria-hidden="true" className="inline-flex">
+              <ArrowDown className="size-3.5" strokeWidth={1.5} />
+            </span>
+          </span>
+          <span className="text-muted-foreground/70">
+            (about me and my work)
+          </span>
+        </a>
       </section>
 
       {/* About — a word from the counter */}
       <section
+        id="about"
         data-section
         className="mx-auto max-w-2xl border-t border-border px-6 py-20"
       >
@@ -159,6 +184,9 @@ export default function Page() {
         >
           A word from the counter
         </h2>
+        <p className="-mt-6 mb-6 font-mono text-xs text-muted-foreground">
+          (about me)
+        </p>
         <p className="mb-4 text-muted-foreground">
           Welcome to my page! I&apos;m the engineering lead at{" "}
           <a
