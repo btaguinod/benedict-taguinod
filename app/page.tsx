@@ -331,15 +331,12 @@ export default function Page() {
           Let&apos;s talk.
         </h2>
         <p className="mb-8 text-muted-foreground">
-          Looking for a lead engineer who ships production infrastructure and
-          cares about the mission behind it? The easiest next step is a
-          20-minute conversation — my resume and every claim on this page are
-          one click away.
+          if you want to chat, my inbox is open!
         </p>
         <div className="flex flex-wrap gap-3">
           <Button
             render={
-              <a href="mailto:benedict.a.taguinod@gmail.com?subject=Intro%20call" />
+              <a href="mailto:benedict.a.taguinod@gmail.com?subject=Getting%20in%20touch" />
             }
             size="lg"
           >
