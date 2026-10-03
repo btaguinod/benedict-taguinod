@@ -1,21 +1,41 @@
-# shadcn/ui monorepo template
+# benedict-taguinod
 
-This is a Next.js monorepo template with shadcn/ui.
+Personal website for Benedict Taguinod — built with Next.js (App Router), Tailwind CSS v4, shadcn/ui, and GSAP.
 
-## Adding components
+## Getting started
 
-To add components to your app, run the following command at the root of your `web` app:
+Requires Node >= 20 and pnpm (declared via `packageManager`).
 
 ```bash
-pnpm dlx shadcn@latest add button -c apps/web
+pnpm install
+pnpm dev
 ```
 
-This will place the ui components in the `packages/ui/src/components` directory.
+Then open http://localhost:3000.
 
-## Using components
+## Scripts
 
-To use the components in your app, import them from the `ui` package.
+| Command        | Description                     |
+| -------------- | ------------------------------- |
+| `pnpm dev`     | Start the dev server (port 3000) |
+| `pnpm build`   | Production build                |
+| `pnpm start`   | Serve the production build      |
+| `pnpm lint`    | Run ESLint                      |
+| `pnpm format`  | Format with Prettier            |
+| `pnpm typecheck` | Type-check with TypeScript    |
 
-```tsx
-import { Button } from "@workspace/ui/components/button";
+## Structure
+
+- `app/` — routes, layout, global styles
+- `components/` — site components (`ui/` holds shadcn/ui primitives)
+- `lib/` — shared utilities (`cn`)
+- `hooks/` — shared React hooks
+- `docs/` — cv.md and resume.md
+
+## Adding shadcn/ui components
+
+```bash
+pnpm dlx shadcn@latest add button
 ```
+
+Components are placed in `components/ui/` per `components.json`.

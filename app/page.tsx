@@ -4,7 +4,7 @@ import { useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import { Button } from "@workspace/ui/components/button"
+import { Button } from "@/components/ui/button"
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
 

@@ -1,8 +1,8 @@
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google"
 
-import "@workspace/ui/globals.css"
+import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@workspace/ui/lib/utils";
+import { cn } from "@/lib/utils"
 
 const fraunces = Fraunces({ subsets: ['latin'], variable: '--font-heading', axes: ['opsz', 'SOFT', 'WONK'] });
 
