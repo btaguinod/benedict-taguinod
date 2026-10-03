@@ -20,11 +20,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://benedict-taguinod.com"),
-  title: "Benedict Taguinod — web + cloud engineer",
+  title: "Benedict Taguinod — web & cloud engineer",
   description:
     "Berkeley EECS graduate. Ex-HPE cloud developer (Go, Terraform, Kubernetes). Lead engineer at Conectado, building tech-powered pathways to economic mobility.",
   openGraph: {
-    title: "Benedict Taguinod — web + cloud engineer",
+    title: "Benedict Taguinod — web & cloud engineer",
     description:
       "Berkeley EECS graduate. Ex-HPE cloud developer (Go, Terraform, Kubernetes). Lead engineer at Conectado.",
     url: "https://benedict-taguinod.com",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benedict Taguinod — web + cloud engineer",
+    title: "Benedict Taguinod — web & cloud engineer",
     description:
       "Berkeley EECS graduate. Ex-HPE cloud developer (Go, Terraform, Kubernetes). Lead engineer at Conectado.",
   },

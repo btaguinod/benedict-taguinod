@@ -108,9 +108,9 @@ export default function Page() {
           data-js-hide
           className="mb-8 text-xl leading-relaxed text-muted-foreground"
         >
-          web &amp; cloud engineer ·{" "}
-          <span className="text-foreground">education enthusiast</span> ·
-          aspiring entrepreneur
+          serving{" "}
+          <span className="text-foreground">engineering, education</span>, and
+          everything in between
         </p>
         <div ref={heroButtonsRef} data-js-hide className="flex flex-wrap gap-3">
           <Button
@@ -148,7 +148,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Today's brew — the special */}
+      {/* About — a word from the counter */}
       <section
         data-section
         className="mx-auto max-w-2xl border-t border-border px-6 py-20"
@@ -157,8 +157,50 @@ export default function Page() {
           className="mb-8 text-2xl font-semibold"
           style={{ fontFamily: "var(--font-heading)" }}
         >
+          A word from the counter
+        </h2>
+        <p className="mb-4 text-muted-foreground">
+          Welcome to my page! I&apos;m the engineering lead at{" "}
+          <a
+            href="#connectado"
+            className="text-secondary underline decoration-border underline-offset-4 transition-colors hover:decoration-secondary"
+          >
+            Conectado
+          </a>
+          , empowering students to succeed in their classrooms and careers.
+        </p>
+        <p className="mb-4 text-muted-foreground">
+          In my past work at{" "}
+          <a
+            href="#work"
+            className="text-secondary underline decoration-border underline-offset-4 transition-colors hover:decoration-secondary"
+          >
+            HPE
+          </a>
+          , I developed cloud-native applications for scaling enterprises.
+        </p>
+        <p className="text-muted-foreground">
+          I love learning and I love building. Right now, my specialties are
+          websites, automations, and infrastructure. Have a look around to see
+          some of my work!
+        </p>
+      </section>
+
+      {/* Today's brew — the special */}
+      <section
+        id="connectado"
+        data-section
+        className="mx-auto max-w-2xl scroll-mt-8 border-t border-border px-6 py-20"
+      >
+        <h2
+          className="mb-8 text-2xl font-semibold"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
           Today&apos;s brew
         </h2>
+        <p className="-mt-6 mb-6 font-mono text-xs text-muted-foreground">
+          (current work)
+        </p>
         <div className="mb-4 flex items-baseline gap-2">
           <span
             className="inline-block bg-card px-2 text-sm font-bold uppercase leading-7 tracking-widest"
@@ -168,25 +210,26 @@ export default function Page() {
           </span>
         </div>
         <p className="font-mono text-sm text-muted-foreground">
-          Conectado · <span className="text-foreground">2025–present</span>
+          Conectado Inc. ·{" "}
+          <span className="text-foreground">2025–present</span>
         </p>
         <p className="mt-4 mb-4 text-sm text-muted-foreground">
-          Conectado is a nonprofit building tech-powered pathways to economic
-          mobility for underserved communities.
+          Conectado builds tech-powered pathways to economic mobility.
         </p>
         <ul className="space-y-2 text-sm text-muted-foreground">
           <li className="flex gap-2">
             <span className="mt-0.5 text-accent-foreground">—</span>
             <span>
-              Leading company-wide software architecture and aligning long-term
-              technical vision across all teams.
+              Set the software architecture and technical direction for all
+              engineering teams.
             </span>
           </li>
           <li className="flex gap-2">
             <span className="mt-0.5">—</span>
             <span>
-              Built the AI Opportunity Backpack, giving bootcampers access to
-              personalized opportunities and community resources.
+              Built the AI Opportunity Backpack: bootcampers match with
+              opportunities and resources that fit what they&apos;re
+              actually after.
             </span>
           </li>
           <li className="flex gap-2">
@@ -204,8 +247,9 @@ export default function Page() {
 
       {/* The menu — previous work */}
       <section
+        id="work"
         data-section
-        className="mx-auto max-w-2xl border-t border-border px-6 py-20"
+        className="mx-auto max-w-2xl scroll-mt-8 border-t border-border px-6 py-20"
       >
         <h2
           className="mb-8 text-2xl font-semibold"
@@ -213,6 +257,9 @@ export default function Page() {
         >
           On the menu
         </h2>
+        <p className="-mt-6 mb-6 font-mono text-xs text-muted-foreground">
+          (selected work)
+        </p>
         <div className="space-y-8">
           <div>
             <div className="mb-1 flex flex-wrap items-baseline gap-x-2">
@@ -248,15 +295,15 @@ export default function Page() {
                 <span className="mt-0.5">—</span>
                 <span>
                   Led <span className="font-medium text-foreground">3 teams</span>{" "}
-                  building a platform that gives Conectado bootcampers
-                  personalized access to academic and career opportunities.
+                  building the platform bootcampers use to find academic and
+                  career opportunities.
                 </span>
               </li>
               <li className="flex gap-2">
                 <span className="mt-0.5">—</span>
                 <span>
-                  Designed and implemented the core application, connecting
-                  students to scholarships, jobs, and community resources.
+                  Designed and built the core application — students match
+                  with scholarships, jobs, and community resources.
                 </span>
               </li>
             </ul>

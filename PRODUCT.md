@@ -16,7 +16,7 @@ A personal portfolio for Benedict Taguinod: Berkeley EECS graduate, former Cloud
 
 ## Positioning
 
-Full-stack infrastructure + mission: deep cloud and systems engineering (Go microservices, bare-metal Kubernetes, Terraform-as-a-Service) applied to education and economic mobility through Conectado. The combination of production-grade technical work at a major enterprise (HPE) and founding-level engineering at a nonprofit (Conectado) is the distinguishing claim — not either alone.
+Full-stack infrastructure + mission: deep cloud and systems engineering (Go microservices, bare-metal Kubernetes, Terraform-as-a-Service) applied to education and economic mobility through Conectado. The combination of production-grade technical work at a major enterprise (HPE) and founding-level engineering at a mission-driven company (Conectado) is the distinguishing claim — not either alone.
 
 ## Operating Context
 
@@ -49,7 +49,7 @@ Full-stack infrastructure + mission: deep cloud and systems engineering (Go micr
 
 - Name: Benedict Taguinod (never abbreviated to Ben)
 - Voice: direct, grounded, no marketing language — the copy describes real work with real numbers where they exist
-- Tagline in use: "web + cloud engineer. education enthusiast. aspiring entrepreneur." (all lowercase)
+- Tagline in use: "serving engineering, education, and everything in between" (all lowercase; decided 2026-10-03)
 
 ## Evidence on Hand
 
@@ -84,7 +84,7 @@ Full-stack infrastructure + mission: deep cloud and systems engineering (Go micr
 ## Product Principles
 
 1. **Depth over breadth.** One well-chosen project entry that shows system-level thinking beats a list of side projects. Every item earns its place.
-2. **Mission is the moat.** The combination of enterprise rigor and nonprofit purpose is the claim no neighboring engineer can copy. It should read as intentional, not incidental.
+2. **Mission is the moat.** The combination of enterprise rigor and mission-driven purpose is the claim no neighboring engineer can copy. It should read as intentional, not incidental.
 3. **Earns the call, not the job.** The portfolio's job is to make a recruiter want to talk — not to replace the resume or substitute for a conversation.
 4. **Real copy only.** Numbers, names, and outcomes come from the actual work. No marketing filler, no estimated impact that isn't documented.
 5. **The interface recedes.** This is an Experience-mode surface: the person and the work lead; the chrome disappears.

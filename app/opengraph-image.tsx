@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "Benedict Taguinod — web + cloud engineer"
+export const alt = "Benedict Taguinod — web & cloud engineer"
 export const size = {
   width: 1200,
   height: 630,
@@ -61,7 +61,7 @@ export default async function Image() {
           Benedict Taguinod.
         </div>
         <div style={{ display: "flex", fontSize: 40, color: ACCENT }}>
-          web + cloud engineer
+          web & cloud engineer
         </div>
       </div>
     </div>,
