@@ -7,10 +7,10 @@ export const size = {
 }
 export const contentType = "image/png"
 
-const BACKGROUND = "#090b19"
-const FOREGROUND = "#bed5ff"
-const MUTED = "#95a6c5"
-const ACCENT = "#be8cff"
+const BACKGROUND = "#FCECD8"
+const FOREGROUND = "#241A12"
+const MUTED = "#5C4530"
+const ACCENT = "#597928"
 
 async function loadDMSansTTF(weight: number): Promise<ArrayBuffer | null> {
   try {

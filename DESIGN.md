@@ -1,23 +1,31 @@
 ---
 name: Benedict Taguinod — Portfolio
-description: A dark, calm, Catppuccin-soft portfolio where the person and the work lead and the interface recedes.
+description: A light, cream-paper café menu-board portfolio — brown-green matcha calm where the person and the work lead and the interface recedes.
 colors:
-  primary: "oklch(0.741 0.183 300)"
-  primary-foreground: "oklch(0.088 0.020 274)"
-  background: "oklch(0.156 0.030 274)"
-  foreground: "oklch(0.869 0.064 263)"
-  card: "oklch(0.122 0.026 274)"
-  card-foreground: "oklch(0.869 0.064 263)"
-  secondary: "oklch(0.314 0.028 270)"
-  secondary-foreground: "oklch(0.869 0.064 263)"
-  muted: "oklch(0.234 0.025 273)"
-  muted-foreground: "oklch(0.723 0.049 262)"
-  destructive: "oklch(0.764 0.149 358)"
-  border: "oklch(0.314 0.028 270)"
-  ring: "oklch(0.741 0.183 300)"
-  selection: "oklch(0.741 0.183 300 / 30%)"
-  scrollbar-track: "oklch(0.122 0.026 274)"
-  scrollbar-thumb: "oklch(0.403 0.033 268)"
+  background: "oklch(0.951 0.032 73.5)"
+  foreground: "oklch(0.228 0.022 60.1)"
+  card: "oklch(0.914 0.044 122.7)"
+  card-foreground: "oklch(0.228 0.022 60.1)"
+  popover: "oklch(0.923 0.041 78.1)"
+  popover-foreground: "oklch(0.228 0.022 60.1)"
+  primary: "oklch(0.398 0.094 49)"
+  primary-foreground: "oklch(0.951 0.032 73.5)"
+  secondary: "oklch(0.456 0.101 128.3)"
+  secondary-foreground: "oklch(0.951 0.032 73.5)"
+  muted: "oklch(0.914 0.044 122.7)"
+  muted-foreground: "oklch(0.41 0.045 63.4)"
+  accent: "oklch(0.707 0.099 126.2)"
+  accent-foreground: "oklch(0.228 0.022 60.1)"
+  destructive: "oklch(0.48 0.134 37.1)"
+  border: "oklch(0.836 0.059 122.6)"
+  input: "oklch(0.836 0.059 122.6)"
+  ring: "oklch(0.456 0.101 128.3)"
+  selection: "oklch(0.707 0.099 126.2 / 55%)"
+  scrollbar-track: "oklch(0.923 0.041 78.1)"
+  scrollbar-thumb: "oklch(0.763 0.062 105.3)"
+  scrollbar-thumb-hover: "oklch(0.456 0.101 128.3)"
+  icon-tile: "#6E3511"
+  icon-glyph: "#FCECD8"
 typography:
   display:
     fontFamily: "Fraunces, Georgia, serif"
@@ -72,7 +80,7 @@ components:
     rounded: "{rounded.none}"
     padding: "16px 24px"
   button-primary-hover:
-    backgroundColor: "oklch(0.741 0.183 300 / 80%)"
+    backgroundColor: "oklch(0.398 0.094 49 / 80%)"
   button-outline:
     backgroundColor: "transparent"
     textColor: "{colors.foreground}"
@@ -80,7 +88,7 @@ components:
     rounded: "{rounded.none}"
     padding: "16px 24px"
   button-outline-hover:
-    backgroundColor: "{colors.secondary}"
+    backgroundColor: "{colors.muted}"
   button-lg:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.primary-foreground}"
@@ -93,241 +101,252 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Quiet Backbone"**
+**Creative North Star: "The Menu Board"**
 
-This system renders an engineer who is helpful and soft-spoken while carrying
-real infrastructure weight. The interface recedes: a deep, low-chroma
-blue-black canvas (Catppuccin Mocha at heart) holds one lavender accent, and
-the reader meets the person, not the chrome. Minimalism here is not emptiness —
-it isolates. Every stripped-away ornament raises the signal of what remains: a
-name set in a warm variable serif, a tagline in the maintainer's own lowercase
-voice, real numbers from real work.
+This system renders the portfolio as the menu board of a café whose product
+is an engineer: one board you scan in a single pass, set on warm unbleached
+cream paper with deep espresso-brown ink, olive-green links, and matcha-sage
+fields between 1px sage hairlines. The visitor is greeted — "welcome in! I'm"
+— the way a regular is greeted at the counter, then reads a menu: the day's
+special ("Today's brew", the current role), the standing menu of work, and
+the counter where the conversation happens. Sections are menu categories;
+entries are items; outcomes are the prices-and-portions. No cards, no
+columns — one narrow reading column, the width of a well-set menu.
 
-The palette is soft but never sleepy. Catppuccin's softened-dark character —
-a lavender voice on a night-blue page, grays that lean warm rather than dead —
-is the emotional register: calm, professional, quietly distinct. Depth is
-earned with tonal layering and hairline rules, not shadows; motion is brief
-fades that settle rather than perform. The signature move is a variable-font
-hero: Fraunces arriving with a `WONK 1 → 0` and `SOFT 0 → 100` axis animation,
-the serif literally relaxing into place as the page loads.
-
-The incumbent components are squared (0px radius) because nothing here needs
-to feel bubbly; restraint is the feel of buttons, cards, and links — refined,
-not tactile. The person and the work are the flair. When more visual voice is
-wanted later, it must be earned the same way: isolate one impactful element,
-rather than adding ambient decoration.
+Two hues, one warm neutral, one ink: espresso brown (~49°) and olive/matcha
+green (~128°) over cream. The green is architectural, not garnish — links,
+focus, fields, and rules carry it; cream stays paper; espresso does the
+writing and the primary actions, like ink pressed into cardstock. Depth is
+tonal (sage washes between hairlines), never shadowed. Motion settles like
+an analog gauge: one spring, then quiet. The signature moment is the greet
+itself — the page opens like a shop door, lowercase, in mono, the
+maintainer's own voice.
 
 **Key Characteristics:**
 
-- Dark-first, effectively dark-only; Catppuccin Mocha-derived OKLCH palette
-- One lavender accent, used sparingly on primary actions
-- Squared components (no border radius), uppercase button labels; no kickers or eyebrows — headings carry their own weight
-- Fraunces display serif with variable-axis animation; DM Sans body; JetBrains Mono for tech-stack tags
-- Hairline `border-t` section separators on a single narrow measure (~672px)
+- Light-only; cream `#FCECD8`-derived OKLCH palette, dark mode unshipped
+- Brown-green two-hue family; espresso ink writes, deep olive acts, matcha
+  tints fields — green never appears as bare garnish
+- Squared components (0px radius), uppercase mono-tracked button labels;
+  no kickers or eyebrows — headings carry their own weight
+- Fraunces display serif (SOFT 100 at rest); DM Sans body; JetBrains Mono
+  for the greet line, meta rows, and tech-stack tags
+- 1px sage hairline section separators on a single narrow measure (~672px)
 - GSAP fade/settle motion, fully disabled under `prefers-reduced-motion`
 
 ## Colors
 
-A softened-dark scheme: one lavender voice over deep blue-black, with warm
-gray-blue structure. Everything is low-noise so the accent stays rare.
+A warm daylight scheme: espresso ink on cream paper with an olive-green
+supporting voice. Everything keeps a sandy/sage temperature — no pure
+grays, no cool blues.
 
 ### Primary
 
-- **Lavender Aura** (`oklch(0.741 0.183 300)`): The single accent. Primary
-  button fill, focus rings, selection wash (30% alpha), scrollbar thumb hover.
-  Rarity is the point — it marks "action" and nothing else.
+- **Espresso Tile** (`oklch(0.398 0.094 49)`, the pinned `#6E3511`): The
+  ink voice. Primary button fill (cream text, 8.3:1), icon/favicon tile,
+  and the display name itself. Also `primary`-hover at 80% alpha.
 
-### Secondary (optional; omit if the project has only one accent)
+### Secondary
 
-- **Smoke Shell** (`oklch(0.314 0.028 270)`): Elevated interactive surface —
-  hover fills on outline/ghost buttons, border and input stroke color. Reads
-  as "one step closer to the reader" gray.
+- **Deep Leaf** (`oklch(0.456 0.101 128.3)`, deepened toward the pinned
+  `#597928` olive for 6:1 on cream): The action-and-link voice — text links,
+  focus ring, scrollbar thumb hover, chart-1. The green earns its place by
+  contrast, not decoration.
 
 ### Tertiary (optional)
 
-- **Grafana Green** (`oklch(0.858 0.142 143)`), **Terminal Amber**
-  (`oklch(0.911 0.092 75)`), **HPE Cyan** (`oklch(0.744 0.123 253)`), **Soft
-  Rose** (`oklch(0.764 0.149 358)`): chart-1 through chart-5. Reserved for
-  future data-viz (monitoring-flavored). Not for UI chrome; Rose doubles as
-  the semantic destructive color.
+- **Matcha Sage** (`oklch(0.707 0.099 126.2)`, the pinned `#91AC67`):
+  Field tint voice — the "special" chip background, selection wash (55%
+  alpha), hover fills via `--muted`. Never body text (1.3:1 on cream).
+  **Terracotta Shot** (`oklch(0.48 0.134 37.1)`, derived `#9A3B1E`):
+  semantic destructive, the one warm-red voice, used for errors only.
+  Chart-2 through chart-5 (espresso, lighter matcha, caramel, terracotta)
+  stay reserved for future data-viz.
 
 ### Neutral
 
-- **Deep Mocha** (`oklch(0.156 0.030 274)`): Page background. The night canvas.
-- **Night Cocoa** (`oklch(0.122 0.026 274)`): Card/popover wells slightly
-  darker than the page — inverse-elevation tonal step.
-- **Moonlit Slate** (`oklch(0.869 0.064 263)`): Primary text.
-- **Ash Mist** (`oklch(0.723 0.049 262)`): Secondary/inactive text, list
-  bodies, taglines' dimmed halves.
-- **Idle Gray** (`oklch(0.234 0.025 273)`): Muted fills, hover washes.
-- **Hairline** (`oklch(0.314 0.028 270)`): 1px section separators, borders.
-- **Primary Ink** (`oklch(0.088 0.020 274)`): Text on Lavender Aura.
-- **Thumb Gray** (`oklch(0.403 0.033 268)`): Scrollbar thumb, mid-step gray.
+- **Café Cream** (`oklch(0.951 0.032 73.5)`, the pinned `#FCECD8`): Page
+  background, the paper.
+- **Espresso Ink** (`oklch(0.228 0.022 60.1)`, derived `#241A12`): Primary
+  text — 14.7:1 on cream. Slightly deeper than the pinned brown so hairlines
+  and text read at different weights.
+- **Espresso Ash** (`oklch(0.41 0.045 63.4)`, derived `#5C4530`): Secondary
+  text — 7.1:1 on cream, 5.3:1 on the sage wash. Muted prose, meta rows.
+- **Sage Wash** (`oklch(0.914 0.044 122.7)`, derived `#DDE8C8`): Card/muted
+  field — the palest green tint, quiet fills and the special chip.
+- **Pale Sand** (`oklch(0.923 0.041 78.1)`, derived `#F5E3C8`): Popover
+  well one step warmer than cream.
+- **Sage Hairline** (`oklch(0.836 0.059 122.6)`, derived `#C2D0A6`): 1px
+  borders and separators — darkened matcha so rules read on cream.
+- **Dusk Caramel** (`oklch(0.763 0.062 105.3)`, derived `#C9B08C`):
+  Scrollbar thumb at rest, mid-step warm gray.
 
 ### Named Rules (optional, powerful)
 
-**The One Voice Rule.** Lavender Aura is used on ≤10% of any viewport. It
-marks action (primary button, focus ring, selection); if a static element
-competes for it, the element is wrong.
-**The Warmer-Grays Rule.** All neutrals lean blue-violet, never pure gray
-(0 chroma). The softness is in the temperature.
+**The Ink Rule.** Espresso writes and acts; green connects and tints;
+cream is paper. If a surface reads green, it is a field or a link — never
+a wall of green text.
+**The Warm-Temperature Rule.** Every neutral leans warm (sand/sage hue
+60–130°); pure gray (0 chroma) and cool blue are foreign to this world.
+**The Cream Ledger Rule.** Body text is Espresso Ink (14.7:1), never Matcha
+Sage; green carries links and large accents only after contrast verification.
 
 ## Typography
 
 **Display Font:** Fraunces (with Georgia, serif fallback) — variable axes
-`opsz`, `SOFT`, `WONK`
+`opsz`, `SOFT`, `WONK` (loaded, but axes rest at default; no flip)
 **Body Font:** DM Sans (with system-ui, sans-serif fallback)
 **Label/Mono Font:** JetBrains Mono (with monospace fallback)
 
-**Character:** A warm variable serif that relaxes into place over quiet
-utilitarian sans and mono. Fraunces carries the person; DM Sans and JetBrains
-Mono carry the work.
+**Character:** The warm soft-serif display of a hand-lettered menu over the
+clean sans of a well-printed card and the mono of the board's dated meta
+rows. Fraunces carries the person; DM Sans carries the work; JetBrains Mono
+carries the café's small print.
 
 ### Hierarchy
 
-- **Display** (700, clamp(3rem–3.75rem), 1.25): The hero name only. Loads
-  animated from `WONK 1/SOFT 0` to `WONK 0/SOFT 100` at `opsz 144`.
-- **Headline** (600, 1.5rem, 1.3): Section titles ("Selected Work", "Let's
-  build something.").
-- **Title** (500, 0.875–1rem, 1.5): Entry names within sections ("Lead
-  Engineer", "AI Opportunity Backpack").
+- **Display** (700, clamp(3rem–3.75rem), 1.25): The hero name only. Rests
+  at `WONK 0, SOFT 100, opsz 144`; entrance is y+opacity settle.
+- **Headline** (600, 1.5rem, 1.3): Section titles — "Today's brew", "On the
+  menu", "Let's talk."
+- **Title** (500, 0.875–1rem, 1.5): Entry names within sections ("Cloud
+  Developer", "AI Opportunity Backpack").
+- **Chip Title** (700, 0.875rem, 1.625, uppercase, 0.1em tracking, Fraunces
+  on Sage Wash padding): The one special's name row.
 - **Body** (400, 1rem–0.875rem, 1.625): Taglines and entry descriptions,
   bounded by the ~672px measure.
 - **Label** (600, 0.75rem, 0.1em tracking, uppercase): All button text
   ("LinkedIn", "Email me", "Résumé").
-- **Mono Label** (400, 0.75rem): Tech-stack tags ("Kubernetes · Prometheus ·
-  Grafana"), separator-dot form.
+- **Mono Meta** (400, 0.75–0.875rem): The greet line, meta rows
+  ("Conectado · 2025–present"), and tech-stack tags ("Kubernetes ·
+  Prometheus · Grafana"), separator-dot form.
 
 ### Named Rules (optional)
 
-**The Relaxing Serif Rule.** Fraunces renders with `SOFT 100, WONK 0` at
-rest. Axis flips are entrance animation only, never a resting state.
-**The Lowercase Voice Rule.** Kickers and taglines follow the brand's
-lowercase voice when echoing the personal tagline; buttons stay uppercase.
+**The Lowercase Voice Rule.** The greet line and CTA echo the brand's
+lowercase voice ("welcome in! I'm"); buttons stay uppercase.
 
 ## Layout
 
-Single narrow measure, ~672px (`max-w-2xl` ≈ 42rem), center-aligned, with 24px
-gutters (`px-6`) and generous 80px vertical rhythm (`py-20`) per section.
-Full-height hero (100svh) starts the scroll; every later section is a short
-chapter separated by a 1px `border-t` hairline — no cards, no columns, one
-reading column. Density is air: whitespace does the isolating that the North
-Star demands. Responsive behavior collapses gracefully — type scale steps
-down (name 5xl→6xl at `sm`), and buttons wrap (`flex-wrap`). No grid system;
-if a future two-column need appears, it must justify itself against the
-single-measure doctrine.
+Single narrow measure, ~672px (`max-w-2xl` ≈ 42rem), left-aligned within a
+centered column, 24px gutters (`px-6`) and generous 80px vertical rhythm
+(`py-20`) per section. Full-height hero (100svh) starts the scroll; every
+later section is a menu category separated by a 1px `border-t` hairline —
+no cards, no columns, one reading column. Responsive behavior collapses
+gracefully: the name wraps ("Benedict" / "Taguinod."), buttons wrap, chip
+titles break onto two lines. No grid system; a future two-column need must
+justify itself against the single-measure doctrine.
 
 ## Elevation & Depth
 
-Depth is tonal, not shadowed: the page is Deep Mocha, interactive surfaces
-step _lighter_ (Smoke Shell) on hover, while dedicated well surfaces
-(Night Cocoa, used by popovers/cards) step _darker_. Two 1px hairline tokens —
-Hairline and border — draw section separators and control outlines. There are
-**no box-shadows anywhere** in the incumbent system; do not introduce them
-casually. If a future "pop" moment needs lift, prefer a Lavender Aura ring
-or a tonal step before a shadow; if shadows ever arrive, they must be
-declared in this section first.
+Flat. Depth is tonal only: the page is Café Cream, fields step into Sage
+Wash behind hairlines, popovers sit on Pale Sand. There are **no
+box-shadows anywhere** in the system; do not introduce them. If a future
+moment needs lift, prefer a Deep Leaf ring or a tonal step; shadows must
+be declared in this section first.
 
 ### Named Rules (optional)
 
 **The Flat-By-Default Rule.** Surfaces are flat at rest; state is expressed
-with tonal steps and hairlines, not elevation. Any shadow must be declared
-here first.
+with tonal steps and hairlines, never elevation.
 
 ## Shapes
 
-Everything squared. Component corners are 0px radius (buttons `rounded-none`);
-the only rounded things are utility chrome: 4px scrollbar thumb, 5px favicon
-tile. Hairline rules (1px, Hairline gray) are the structural motif — full
-section-width dividers and focus rings. Inputs, when they arrive, follow the
-same squared form. This squared stance is what keeps the terminal-engineer
-character inside the soft palette: edges square, colors soft.
+Everything squared. Component corners are 0px radius (buttons
+`rounded-none`); the only rounded things are utility chrome: 4px scrollbar
+thumb, 5px favicon tile. Hairline rules (1px, Sage Hairline) are the
+structural motif — full section-width dividers, the chip's baseline field,
+and focus rings. Edges square, colors soft.
 
 ## Components
 
 ### Buttons
 
 - **Shape:** Squared corners (0 radius), thin transparent border at rest.
-- **Primary:** Lavender Aura fill, Primary Ink text, uppercase 0.75rem/600
+- **Primary:** Espresso Tile fill, Café Cream text, uppercase 0.75rem/600
   with 0.1em tracking, 40px tall × 24px horizontal padding.
 - **Hover / Focus:** Primary dims to 80% alpha; outline/ghost fill with
-  Smoke Shell. Focus: 1px Lavender Aura border + 2px ring at 30% alpha;
-  buttons dip 1px on press. Transition covers all properties briefly.
-- **Outline:** Transparent over Deep Mocha, Moonlit Slate text, Hairline
-  border; on dark input surfaces, hover wash uses `--input` at 30%.
-- **Ghost:** No border; hover washes Idle Gray, text brightens.
+  Sage Wash, text deepens. Focus: 1px Deep Leaf border + 2px ring at 30%
+  alpha; buttons dip 1px on press.
+- **Outline:** Transparent over Café Cream, Espresso Ink text, Sage
+  Hairline border.
+- **Ghost:** No border; hover washes Sage Wash.
 - **Sizes:** xs 28px, sm/sm-default 36–40px, lg 44px tall; proportional
   horizontal padding (12–32px).
 
 ### Chips
 
-- **Style:** None as components, but the recurring chip _pattern_ is plain
-  mono text with middot separators (`JetBrains Mono 0.75rem`, Ash Mist).
-- **State:** Static tags only.
+- **The Special Chip** (signature pattern): entry title set uppercase in
+  Fraunces 700 with 0.75rem-equivalent prominence, on a Sage Wash field
+  (`--card`) with `px-2` padding and 28px line height — like a menu's
+  highlighted special. Cream page shows through as the paper margin.
+- **Meta rows / tech tags:** plain mono middot lists (`JetBrains Mono
+  0.75rem`, Espresso Ash).
 
 ### Cards / Containers
 
-- Not used on the page. When they arrive: Night Cocoa well, Hairline 1px
-  border, squared corners, no shadow, 16–24px internal padding.
+- Not used on the page. When they arrive: Sage Wash field, Sage Hairline
+  1px border, squared corners, no shadow, 16–24px internal padding.
 
 ### Inputs / Fields
 
-- None on the page. Incumbent token (`--input`) equals Hairline; squared,
-  1px stroke, wash on focus per buttons.
+- None on the page. Incumbent token (`--input`) equals Sage Hairline;
+  squared, 1px stroke, Deep Leaf focus ring.
 
 ### Navigation
 
 - None: a single scrolling page with a full-viewport hero. Anchor behavior
-  only. Keyboard "d" toggles theme (dark↔light), though light is not
-  implemented.
+  only.
 
 ### Signature Component
 
-- **The Relaxing Hero:** The `h1` name animates its Fraunces variable axes
-  (`WONK 1→0`, `SOFT 0→100`, `opsz 144`) over 1.4s with `expo.out` easing as
-  the entrance timeline (staggered intro → name → tagline → buttons, ~0.1s
-  overlap) plays; sections fade in once on scroll (`top 88%`, once). All
-  motion is inside a `matchMedia("(prefers-reduced-motion: no-preference)")`
-  guard.
+- **The Greet-and-Settle Hero:** "welcome in! I'm" (mono, Espresso Ash)
+  → Fraunces name → tagline → buttons, a staggered fade/settle entrance
+  (~0.9s on the name, `expo.out`); sections fade in once on scroll
+  (`top 88%`, once). All motion sits inside a
+  `matchMedia("(prefers-reduced-motion: no-preference)")` guard. Depth is
+  a 12–14px rise that settles — gauge-settle, never bounce.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** keep the accent rare (The One Voice Rule): Lavender Aura only on
-  primary actions, focus rings, and selection.
-- **Do** use hairlines (1px, `--border`) and tonal steps (Night Cocoa /
-  Smoke Shell / Deep Mocha) for all structure and depth.
-- **Do** set all display text in Fraunces with `SOFT 100, WONK 0` at rest,
-  and animate axes only as entrance.
-- **Do** keep whitespace as the isolation device: single ~672px measure,
-  80px section rhythm; every element earns its place.
-- **Do** honor the lowercase personal voice in taglines/kickers echoing the
-  brand; uppercase only inside buttons.
-- **Do** keep tech-stack tags as inline mono middot lists in the entry
-  title row (`JetBrains Mono 0.75rem`, Ash Mist).
-- **Do** keep evidence numerals (60%, 50%, 3 mini PCs, 3 teams) brightened
-  to Moonlit Slate inside muted prose — numbers carry the weight.
-- **Do** keep the resume one click away: /resume serves docs/resume.md
-  (upgrades to resume.pdf when present).
-- **Do** gate all motion behind `prefers-reduced-motion`; `expo.out` +
+- **Do** keep the two-hue discipline (The Ink Rule): espresso writes and
+  acts; green links, tints, and rings; cream stays paper.
+- **Do** keep every neutral warm (The Warm-Temperature Rule): sage/sand
+  hues 60–130°, chroma ≥ 0.02.
+- **Do** use hairlines (1px, `--border`) and tonal steps (Sage Wash / Pale
+  Sand / Café Cream) for all structure and depth.
+- **Do** set display text in Fraunces resting at `SOFT 100, WONK 0`; motion
+  is fade/settle, never axis animation.
+- **Do** keep the greet line lowercase mono — it is the page's opening voice.
+- **Do** keep tech tags as inline mono middot lists in the entry title row.
+- **Do** keep evidence numerals (60%, 50%, 4 mini PCs, 3 teams) at Espresso
+  Ink weight inside Espresso Ash prose — numbers carry the weight.
+- **Do** keep links green (Deep Leaf) with hairline underlines
+  (`decoration-border`, offset 4), deepening on hover.
+- **Do** keep the resume one click away: /resume serves docs/resume.md.
+- **Do** gate all motion behind `prefers-reduced-motion`; `expo.out`
   fade/settle grammar.
+- **Do** keep browser chrome (favicon, apple icon) in the espresso-tile
+  family (`#6E3511` tile, `#FCECD8` cream glyphs).
 
 ### Don't:
 
+- **Don't** reintroduce the lavender night world; light-only is the
+  committed world, dark tokens stay identical to root and unshipped.
 - **Don't** introduce gradients, glassmorphism, or ambient glows — flat
-  tonal layers only; any shadow must be declared in Elevation & Depth first.
+  tonal layers only.
 - **Don't** round component corners; squared is the form language (utility
   chrome only: scrollbar 4px, favicon tile 5px).
-- **Don't** spread Lavender Aura onto static elements; if it appears on
-  something static, reassign to Moonlit Slate.
-- **Don't** add a second accent hue; chart tones (Grafana Green, Terminal
-  Amber, HPE Cyan, Soft Rose) stay for data-viz and destructive only.
-- **Don't** use pure gray (0-chroma) neutrals; every neutral keeps its
-  blue-violet temperature.
+- **Don't** use Matcha Sage for text on cream (1.3:1); green text is Deep
+  Leaf only, after contrast math.
+- **Don't** use pure gray or cool-blue neutrals; every neutral keeps its
+  warm temperature.
+- **Don't** add a third hue; terracotta is destructive-only, chart tones
+  stay for data-viz.
 - **Don't** let body text exceed the ~672px measure; no multi-column
   reading layouts.
-- **Don't** implement light mode until real light tokens exist; `:root` and
-  `.dark` are currently identical, dark is the world.
+- **Don't** animate Fraunces axes; that was the previous world's signature.
 - **Don't** fabricate numbers, testimonials, or projects — copy comes from
   documented work only (per PRODUCT.md).

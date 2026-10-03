@@ -43,7 +43,7 @@ Full-stack infrastructure + mission: deep cloud and systems engineering (Go micr
 **Decided (2026-10-03):**
 
 - Resume is surfaced: docs/resume.md (or resume.pdf when added) is served at /resume via app/resume/route.ts, linked from CTA and footer.
-- Light mode is not shipped; the world is dark-only until real light tokens exist (see DESIGN.md).
+- Light-only world (2026-10-03 redesign): the Menu Board cream/matcha palette is the shipped look; dark tokens remain unshipped placeholders.
 
 ## Brand Commitments
 

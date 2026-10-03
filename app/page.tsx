@@ -21,10 +21,7 @@ export default function Page() {
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.set(introRef.current, { opacity: 0 })
-        gsap.set(nameRef.current, {
-          opacity: 0,
-          fontVariationSettings: '"WONK" 1, "SOFT" 0, "opsz" 144',
-        })
+        gsap.set(nameRef.current, { opacity: 0, y: 14 })
         gsap.set(taglineRef.current, { opacity: 0, y: 10 })
         gsap.set(heroButtonsRef.current, { opacity: 0 })
 
@@ -35,8 +32,8 @@ export default function Page() {
             nameRef.current,
             {
               opacity: 1,
-              fontVariationSettings: '"WONK" 0, "SOFT" 100, "opsz" 144',
-              duration: 1.4,
+              y: 0,
+              duration: 0.9,
               ease: "expo.out",
             },
             "-=0.15"
@@ -44,25 +41,29 @@ export default function Page() {
           .to(
             taglineRef.current,
             { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" },
-            "-=0.9"
+            "-=0.6"
           )
           .to(
             heroButtonsRef.current,
             { opacity: 1, duration: 0.5, ease: "expo.out" },
-            "-=0.5"
+            "-=0.4"
           )
 
         gsap.utils.toArray<HTMLElement>("[data-section]").forEach((section) => {
-          gsap.from(section, {
-            opacity: 0,
-            duration: 0.7,
-            ease: "expo.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 88%",
-              once: true,
-            },
-          })
+          gsap.from(
+            section,
+            {
+              opacity: 0,
+              y: 12,
+              duration: 0.7,
+              ease: "expo.out",
+              scrollTrigger: {
+                trigger: section,
+                start: "top 88%",
+                once: true,
+              },
+            }
+          )
         })
       })
     },
@@ -74,34 +75,42 @@ export default function Page() {
       ref={containerRef}
       className="min-h-svh bg-background text-foreground"
     >
-      {/* Hero */}
+      <span
+        hidden
+        aria-hidden="true"
+        dangerouslySetInnerHTML={{
+          __html:
+            '<!-- Direction contract — The Menu Board (seed 3cd9af30). THESIS: the café menu board — one board you scan in a single pass; refuses the dark-terminal portfolio default. OWN-WORLD: cream paper ground, espresso ink, matcha-sage fields and washes between 1px sage hairlines; Fraunces display, DM Sans voice, JetBrains mono tags; squared corners, no shadows. STORY: welcome in! I\'m greets first; a recruiter scans today\'s brew, the menu of work, prices-and-portion outcomes, and lands on the counter CTA — email, résumé, LinkedIn. FIRST VIEWPORT: full-height hero — greeting line, Fraunces espresso name, three-part tagline, row of squared buttons, all on cream. FORM: direction 4 of the grounded list (The Menu Board); seed key 3cd9af30; code-led, no comp is owed. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance. -->',
+        }}
+      />
+      {/* Hero — the board header */}
       <section className="mx-auto flex min-h-svh max-w-2xl flex-col justify-center px-6 py-20">
         <p
           ref={introRef}
           data-js-hide
-          className="mb-4 text-sm text-muted-foreground"
+          className="mb-4 font-mono text-sm text-muted-foreground"
         >
-          Hi, I&apos;m
+          welcome in! I&apos;m
         </p>
         <h1
           ref={nameRef}
-          data-js-hide
-          className="mb-6 text-5xl leading-tight font-bold sm:text-6xl"
-          style={{
+          data-js-hide-name
+          className="mb-6 text-5xl leading-tight font-bold text-[oklch(0.375_0.052_64)] sm:text-6xl"
+            style={{
             fontFamily: "var(--font-heading)",
-            fontVariationSettings: '"WONK" 0, "SOFT" 100, "opsz" 144',
+            fontVariationSettings: `"WONK" 0, "SOFT" 100, "opsz" 144`,
           }}
         >
-          Benedict Taguinod.
+          Benedict Taguinod
         </h1>
         <p
           ref={taglineRef}
           data-js-hide
           className="mb-8 text-xl leading-relaxed text-muted-foreground"
         >
-          web + cloud engineer.{" "}
-          <span className="text-foreground">education enthusiast.</span>{" "}
-          aspiring entrepreneur.
+          web &amp; cloud engineer ·{" "}
+          <span className="text-foreground">education enthusiast</span> ·
+          aspiring entrepreneur
         </p>
         <div ref={heroButtonsRef} data-js-hide className="flex flex-wrap gap-3">
           <Button
@@ -134,12 +143,12 @@ export default function Page() {
             }
             variant="outline"
           >
-            Email me
+            Email
           </Button>
         </div>
       </section>
 
-      {/* Current Work */}
+      {/* Today's brew — the special */}
       <section
         data-section
         className="mx-auto max-w-2xl border-t border-border px-6 py-20"
@@ -148,53 +157,67 @@ export default function Page() {
           className="mb-8 text-2xl font-semibold"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          What I&apos;m working on
+          Today&apos;s brew
         </h2>
-        <div className="space-y-6">
+        <div className="mb-4 flex items-baseline gap-2">
+          <span
+            className="inline-block bg-card px-2 text-sm font-bold uppercase leading-7 tracking-widest"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Lead Engineer, Platform &amp; Learning Systems
+          </span>
+        </div>
+        <p className="font-mono text-sm text-muted-foreground">
+          Conectado · <span className="text-foreground">2025–present</span>
+        </p>
+        <p className="mt-4 mb-4 text-sm text-muted-foreground">
+          Conectado is a nonprofit building tech-powered pathways to economic
+          mobility for underserved communities.
+        </p>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li className="flex gap-2">
+            <span className="mt-0.5 text-accent-foreground">—</span>
+            <span>
+              Leading company-wide software architecture and aligning long-term
+              technical vision across all teams.
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-0.5">—</span>
+            <span>
+              Built the AI Opportunity Backpack, giving bootcampers access to
+              personalized opportunities and community resources.
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-0.5">—</span>
+            <span>
+              Self-hosted Canvas LMS and n8n, cutting{" "}
+              <span className="font-medium text-foreground">
+                50% of instructor time
+              </span>{" "}
+              through AI-enhanced automation workflows.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      {/* The menu — previous work */}
+      <section
+        data-section
+        className="mx-auto max-w-2xl border-t border-border px-6 py-20"
+      >
+        <h2
+          className="mb-8 text-2xl font-semibold"
+          style={{ fontFamily: "var(--font-heading)" }}
+        >
+          On the menu
+        </h2>
+        <div className="space-y-8">
           <div>
-            <div className="mb-1 flex items-baseline gap-2">
-              <span className="font-medium">
-                Lead Engineer, Platform & Learning Systems
-              </span>
-              <span className="text-muted-foreground">
-                @ Conectado · 2025–present
-              </span>
-            </div>
-            <p className="mb-4 text-sm text-muted-foreground">
-              Conectado is a nonprofit building tech-powered pathways to
-              economic mobility for underserved communities.
-            </p>
-            <ul className="list-none space-y-2 text-sm text-muted-foreground">
-              <li className="flex gap-2">
-                <span className="mt-0.5 text-foreground">—</span>
-                <span>
-                  Leading company-wide software architecture and aligning
-                  long-term technical vision across all teams.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-0.5 text-foreground">—</span>
-                <span>
-                  Built the AI Opportunity Backpack, giving bootcampers access
-                  to personalized opportunities and community resources.
-                </span>
-              </li>
-              <li className="flex gap-2">
-                <span className="mt-0.5 text-foreground">—</span>
-                <span>
-                  Self-hosted Canvas LMS and n8n, cutting{" "}
-                  <span className="text-foreground">
-                    50% of instructor time
-                  </span>{" "}
-                  through AI-enhanced automation workflows.
-                </span>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <div className="mb-1 flex items-baseline gap-2">
+            <div className="mb-1 flex flex-wrap items-baseline gap-x-2">
               <span className="font-medium">Cloud Developer</span>
-              <span className="text-muted-foreground">
+              <span className="font-mono text-xs text-muted-foreground">
                 @ Hewlett Packard Enterprise · 2023–2025
               </span>
             </div>
@@ -202,7 +225,7 @@ export default function Page() {
               Two years of production cloud infrastructure work: a network
               automation service in Go for Private Cloud Business Edition, and
               Terraform-as-a-Service — a Go application that automates{" "}
-              <span className="text-foreground">
+              <span className="font-medium text-foreground">
                 60% of the Terraform deployment process
               </span>{" "}
               for internal developers.
@@ -212,23 +235,9 @@ export default function Page() {
               Helm tooling in Go + React. BS EECS from UC Berkeley, 2023.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Selected Work */}
-      <section
-        data-section
-        className="mx-auto max-w-2xl border-t border-border px-6 py-20"
-      >
-        <h2
-          className="mb-8 text-2xl font-semibold"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          Selected Work
-        </h2>
-        <div className="space-y-8">
           <div>
-            <div className="mb-1 flex items-baseline gap-2">
+            <div className="mb-1 flex flex-wrap items-baseline gap-x-2">
               <span className="font-medium">AI Opportunity Backpack</span>
               <span className="font-mono text-xs text-muted-foreground">
                 In development · JavaScript · Python · React
@@ -236,15 +245,15 @@ export default function Page() {
             </div>
             <ul className="list-none space-y-2 text-sm text-muted-foreground">
               <li className="flex gap-2">
-                <span className="mt-0.5 text-foreground">—</span>
+                <span className="mt-0.5">—</span>
                 <span>
-                  Led <span className="text-foreground">3 teams</span> building
-                  a platform that gives Conectado bootcampers personalized
-                  access to academic and career opportunities.
+                  Led <span className="font-medium text-foreground">3 teams</span>{" "}
+                  building a platform that gives Conectado bootcampers
+                  personalized access to academic and career opportunities.
                 </span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-0.5 text-foreground">—</span>
+                <span className="mt-0.5">—</span>
                 <span>
                   Designed and implemented the core application, connecting
                   students to scholarships, jobs, and community resources.
@@ -255,22 +264,23 @@ export default function Page() {
               href="https://aibackpack.conectado.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-block text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="mt-3 inline-block text-sm text-secondary underline decoration-border underline-offset-4 transition-colors hover:decoration-secondary"
             >
               aibackpack.conectado.com →
             </a>
           </div>
 
           <div>
-            <div className="mb-1 flex items-baseline gap-2">
+            <div className="mb-1 flex flex-wrap items-baseline gap-x-2">
               <span className="font-medium">Personal Homelab</span>
               <span className="font-mono text-xs text-muted-foreground">
-                Terraform · Ansible · Proxmox · Docker Swarm · TrueNAS · Prometheus · Grafana
+                Terraform · Ansible · Proxmox · Docker Swarm · TrueNAS ·
+                Prometheus · Grafana
               </span>
             </div>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex gap-2">
-                <span className="mt-0.5 text-foreground">—</span>
+                <span className="mt-0.5">—</span>
                 <span>
                   A production-parity lab modeled on the cloud environments I
                   built at HPE: virtualization, Kubernetes, network storage, and
@@ -278,17 +288,18 @@ export default function Page() {
                 </span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-0.5 text-foreground">—</span>
+                <span className="mt-0.5">—</span>
                 <span>
                   The entire stack is code: Terraform provisions Proxmox VMs
-                  across <span className="text-foreground">4 mini PCs</span>, Ansible
-                  configures the Docker Swarm cluster on top, and a TrueNAS
-                  server backs persistent volumes — reproducible from zero on
-                  new hardware.
+                  across{" "}
+                  <span className="font-medium text-foreground">4 mini PCs</span>,
+                  Ansible configures the Docker Swarm cluster on top, and a
+                  TrueNAS server backs persistent volumes — reproducible from
+                  zero on new hardware.
                 </span>
               </li>
               <li className="flex gap-2">
-                <span className="mt-0.5 text-foreground">—</span>
+                <span className="mt-0.5">—</span>
                 <span>
                   Self-host production-grade services: n8n for workflow
                   automation, Prometheus and Grafana for monitoring and
@@ -300,7 +311,7 @@ export default function Page() {
               href="https://github.com/btaguinod/homelab"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-block text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="mt-3 inline-block text-sm text-secondary underline decoration-border underline-offset-4 transition-colors hover:decoration-secondary"
             >
               github.com/btaguinod/homelab →
             </a>
@@ -311,7 +322,7 @@ export default function Page() {
               href="https://github.com/btaguinod"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm text-secondary underline decoration-border underline-offset-4 transition-colors hover:decoration-secondary"
             >
               See more on GitHub →
             </a>
@@ -319,7 +330,7 @@ export default function Page() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* The counter — CTA */}
       <section
         data-section
         className="mx-auto max-w-2xl border-t border-border px-6 py-20"
@@ -340,7 +351,7 @@ export default function Page() {
             }
             size="lg"
           >
-            Email me
+            Email
           </Button>
           <Button render={<a href="/resume" />} variant="outline" size="lg">
             Résumé
@@ -366,12 +377,12 @@ export default function Page() {
         className="mx-auto max-w-2xl border-t border-border px-6 py-8"
       >
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p className="text-xs text-muted-foreground">
+          <p className="font-mono text-xs text-muted-foreground">
             © {new Date().getFullYear()} Benedict Taguinod
           </p>
           <a
             href="/resume"
-            className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+            className="font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
           >
             résumé →
           </a>

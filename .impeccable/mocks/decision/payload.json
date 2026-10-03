@@ -1,0 +1,110 @@
+{
+  "title": "Pick the matcha-café world",
+  "question": "The roll assigned The Brewing Log for your brown-green redesign. Keep it, take an alternate, re-roll, or play it straight. Every direction opens with: welcome in! I'm",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Brewing Log",
+      "kicker": "THE ROLL",
+      "lineage": "specialty-café brew logs and lab notebooks",
+      "thesis": "Your work recorded the way great coffee is: weighed, timed, tasted — a log where every entry proves the discipline.",
+      "palette": ["#FCECD8", "#6E3511", "#597928", "#91AC67", "#241A12"],
+      "materials": ["unbleached paper", "letterpress rules", "monospace data strata", "olive-green ink"],
+      "viewport": "Cream pressed-paper page, espresso-brown Fraunces name, one running entry titled 'currently brewing: conectado' set as a recipe grid — role, stack, and measured outcomes in tidy columns; matcha green reserved for links and rules.",
+      "risk": "Recipe-column gimmickry can read costume if the grid isn't strict.",
+      "raised": [
+        { "from": "challenger-matcha", "raise": "Green is architectural, not garnish: links, section rules, and headers carry olive/matcha; cream stays paper." },
+        { "from": "challenger-gauge", "raise": "State changes move like analog meters: one spring, then settle — never bouncy easings." },
+        { "from": "challenger-raku", "raise": "One hand-textured moment: a warm pressed-paper wash behind the hero instead of any gradient." }
+      ]
+    },
+    {
+      "id": "pick",
+      "label": "The Menu Board",
+      "kicker": "IMPECCABLE'S PICK",
+      "lineage": "neighborhood café wall menus",
+      "thesis": "The page reads like the wall menu of a café whose product is an engineer: categories, items, and a board you scan in one pass.",
+      "palette": ["#91AC67", "#FCECD8", "#6E3511", "#597928"],
+      "materials": ["chalk-lettered board grammar", "sage ground fields", "espresso ink"],
+      "viewport": "Sage-green wall: sections as menu categories, roles as items with dotted leaders running to outcomes; 'today's brew: conectado' highlighted as the special.",
+      "risk": "The closest to where most warm café redesigns already land — familiar territory."
+    },
+    {
+      "id": "challenger-ceremony",
+      "label": "The Ceremony",
+      "verdict": "competitive",
+      "lineage": "matcha preparation steps",
+      "thesis": "The page unfolds like the making of a bowl: measure, whisk, serve — the visit ends with the person served.",
+      "palette": ["#FCECD8", "#F5E3C8", "#597928", "#6E3511"],
+      "materials": ["cream linen", "olive whisk strokes", "stepped reveal motion"],
+      "viewport": "A centered cream column where sections arrive as numbered ceremony steps and the CTA is the final step: the bowl, served.",
+      "case": "Fuses cleanly: the scroll reads as a progression; holds clarity, gives up a little identification to the log's rigor.",
+      "risk": "Ceremony framing can obscure 'this is an engineer' if steps carry mood over evidence."
+    },
+    {
+      "id": "challenger-matcha",
+      "label": "The Matcha Field",
+      "verdict": "competitive",
+      "lineage": "matcha tins and tea-room shelving",
+      "thesis": "Deep sage-green ground, cream type, espresso actions — the green carries the page so the palette's soul leads.",
+      "palette": ["#4E6B1F", "#91AC67", "#FCECD8", "#6E3511"],
+      "materials": ["deep sage ground", "cream ink", "espresso buttons"],
+      "viewport": "A full sage-green viewport: cream Fraunces name and body type, espresso brown reserved strictly for primary actions.",
+      "case": "Fuses cleanly: the most committed green there is; loses narrowly on clarity — hierarchy leans on cream wells to stay legible.",
+      "risk": "Green-on-green hierarchy goes muddy fast without cream relief."
+    },
+    {
+      "id": "challenger-journal",
+      "label": "The Barista's Journal",
+      "verdict": "declined",
+      "lineage": "a barista's working notebook",
+      "palette": ["#FCECD8", "#6E3511", "#91AC67"],
+      "case": "Fuses poorly: date-diary structure hides role hierarchy from recruiters.",
+      "kept": "Daily-voice entry copy ('currently brewing')."
+    },
+    {
+      "id": "challenger-gauge",
+      "label": "Brew Gauges",
+      "verdict": "declined",
+      "lineage": "analog instrument bridges",
+      "palette": ["#FCECD8", "#6E3511", "#597928"],
+      "case": "Fuses poorly: gauge furniture implies data-viz the résumé copy doesn't fill.",
+      "kept": "Meter-settle motion discipline.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-vu-meter-bridge-hero.webp"
+    },
+    {
+      "id": "challenger-raku",
+      "label": "Kiln & Smoke",
+      "verdict": "declined",
+      "lineage": "raku-fired teabowls",
+      "palette": ["#241A12", "#FCECD8", "#91AC67"],
+      "case": "Fuses poorly: firing-lab framing buries the hospitality warmth.",
+      "kept": "One hand-textured material moment.",
+      "hero": "https://impeccable.style/worlds/cards/clay-ceramics-fracture-raku-smoke-flash-hero.webp"
+    },
+    {
+      "id": "challenger-storm",
+      "label": "Letter Storm",
+      "verdict": "declined",
+      "lineage": "language weather systems",
+      "palette": ["#FCECD8", "#241A12", "#597928"],
+      "case": "Fuses poorly: weathered-type theatrics fight a calm read.",
+      "kept": "Nothing — its weather drama stays behind.",
+      "hero": "https://impeccable.style/worlds/cards/dream-surreal-impossible-worlds-alphabet-storm-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "canon": true,
+  "canonCard": {
+    "id": "canon",
+    "label": "The Straight Résumé",
+    "lineage": "the standard strong engineer portfolio",
+    "thesis": "Clean type, one accent, standard sections — exactly what a great plain portfolio looks like, in your palette.",
+    "palette": ["#FCECD8", "#6E3511", "#597928"],
+    "materials": ["system clarity", "single-accent restraint"],
+    "viewport": "Centered hero, three tidy sections, standard buttons — the category's well-lit default.",
+    "risk": "None — it is the known quantity."
+  },
+  "steer": true,
+  "buildPath": { "value": "code", "toggle": true }
+}
