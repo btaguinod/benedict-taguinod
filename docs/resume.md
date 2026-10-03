@@ -26,7 +26,7 @@
 Lead Engineer, Learning and Platform Systems | San Jose, CA
 
 - Lead company-wide software architecture planning, aligning long-term technical vision across all teams.
-- Designed and implemented the Digital AI Backpack, giving bootcampers access to personalized opportunities and community.
+- Designed and implemented the AI Opportunity Backpack, giving bootcampers access to personalized opportunities and community.
 - Self-hosted Canvas LMS and n8n, enabling async participation and eliminating 50% of instructor time through AI-enhanced workflows.
 
 **Hewlett Packard Enterprise** — June 2023 – July 2025
@@ -39,7 +39,7 @@ Cloud Developer | San Jose, CA
 **Conectado** — June 2024 – July 2025
 Technical Lead | San Jose, CA
 
-- Led 3 teams building the Digital AI Backpack, a JavaScript and Python application for discovering academic and career opportunities.
+- Led 3 teams building the AI Opportunity Backpack, a JavaScript and Python application for discovering academic and career opportunities.
 - Advised scalable Docker and Kubernetes solutions to support growth of the Conectadoverse metaverse learning platform.
 
 **Hewlett Packard Enterprise** — May 2022 – August 2022

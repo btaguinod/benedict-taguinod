@@ -28,16 +28,22 @@ Full-stack infrastructure + mission: deep cloud and systems engineering (Go micr
 ## Capabilities and Constraints
 
 **Confirmed:**
+
 - Single-page scrolling layout; sections: Hero, Current Work, Projects, CTA, Footer
 - Dark/light mode via next-themes ThemeProvider
 - Contact: LinkedIn, GitHub, email (benedict.a.taguinod@gmail.com)
 - Domain: benedict-taguinod.com
 
 **Undecided:**
+
 - Whether to add a skills/tech-stack section
 - Whether to add more project entries beyond the homelab
-- Whether to surface the resume/CV as a download link
 - Whether to link the engineering blog from this portfolio
+
+**Decided (2026-10-03):**
+
+- Resume is surfaced: docs/resume.md (or resume.pdf when added) is served at /resume via app/resume/route.ts, linked from CTA and footer.
+- Light mode is not shipped; the world is dark-only until real light tokens exist (see DESIGN.md).
 
 ## Brand Commitments
 
@@ -48,23 +54,28 @@ Full-stack infrastructure + mission: deep cloud and systems engineering (Go micr
 ## Evidence on Hand
 
 **Experience:**
+
 - Hewlett Packard Enterprise, Cloud Developer (June 2023 – July 2025): Go network automation service for PCBE, Terraform-as-a-Service (automates 60% of TF deployment process), K8s/Helm tooling, full test coverage across microservices
 - Hewlett Packard Enterprise, SWE Intern (May–Aug 2022): Helm Chart management tool in Go + React; Python tool translating Helm Chart requirements to Terraform modules
-- Conectado, Lead Engineer (August 2025 – present): company-wide architecture, Digital AI Backpack, self-hosted Canvas LMS + n8n (50% reduction in instructor time)
-- Conectado, Technical Lead (June 2024 – July 2025): led 3 teams on the Digital AI Backpack; advised Docker/K8s scaling for Conectadoverse
+- Conectado, Lead Engineer (August 2025 – present): company-wide architecture, AI Opportunity Backpack, self-hosted Canvas LMS + n8n (50% reduction in instructor time)
+- Conectado, Technical Lead (June 2024 – July 2025): led 3 teams on the AI Opportunity Backpack; advised Docker/K8s scaling for Conectadoverse
 
 **Projects:**
-- Personal Homelab: bare-metal K8s cluster across 3 mini PCs, dedicated NAS, n8n, Prometheus, Grafana
+
+- Personal Homelab: Proxmox + k3s cluster across 4 mini PCs, dedicated TrueNAS server, n8n, Prometheus, Grafana
 
 **Education:**
+
 - UC Berkeley, BS EECS (May 2023), GPA 3.512
 - Diablo Valley College, CS Certificates (May 2020), GPA 3.867
 
 **Technical skills (from resume):**
+
 - Languages: Python, Go, JavaScript/TypeScript, Java, C, C++, SQL, HTML/CSS
 - Technologies: React, Next.js, Flask, Django, Docker, Kubernetes, Helm, Terraform, PostgreSQL, MongoDB, NumPy
 
 **Files:**
+
 - docs/resume.md — full resume in Markdown
 - docs/cv.md — CV in Markdown
 

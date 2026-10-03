@@ -36,7 +36,7 @@ Lead Engineer, Learning and Platform Systems | San Jose, CA
 
 - Lead planning of company-wide software architecture, aligning the company's long-term technical vision throughout all teams and eliminating redundant work.
 - Developed curriculum and taught AI literacy bootcamps to 50+ students, equipping them with the knowledge and tools required to adapt to modern AI advancements.
-- Lead the technical design and implementation of the Digital AI Backpack, giving bootcampers access to personalized opportunities and a tight-knit community.
+- Lead the technical design and implementation of the AI Opportunity Backpack, giving bootcampers access to personalized opportunities and a tight-knit community.
 - Established the development priorities for the Conectadoverse, a metaverse platform giving bootcampers an immersive learning experience.
 - Created and maintained a self-hosted installation of Canvas LMS, enabling bootcampers to participate asynchronously and eliminating 50% of instructor time.
 - Created and maintained a self-hosted installation of n8n, reducing employee workloads through AI-enhanced workflows.
@@ -44,7 +44,7 @@ Lead Engineer, Learning and Platform Systems | San Jose, CA
 **Conectado** — June 2024 - July 2025
 Technical Lead | San Jose, CA
 
-- Led 3 teams of software developers in developing the Digital AI Backpack, a student-focused application run on Javascript and Python that enables users to discover academic and career opportunities tailored to their goals.
+- Led 3 teams of software developers in developing the AI Opportunity Backpack, a student-focused application run on Javascript and Python that enables users to discover academic and career opportunities tailored to their goals.
 - Provided data-driven insights on student needs to guide development priorities for the Conectadoverse, a metaverse learning platform designed to enhance students learning experiences.
 - Advised scalable solutions utilizing Docker and Kubernetes to optimize the growth and functionality of the Conectadoverse platform.
 - Facilitated an AI Literacy Bootcamp, introducing 50+ students to fundamental AI concepts and modern AI-centric tools.
@@ -93,7 +93,7 @@ Software Developer Intern | Berkeley, CA
 
 **Computer Simulations with Jupyter Notebooks** — Fall 2022
 
-- Created various 3D animations using Python including a 3D Mendelbrot Set zoom, landscape erosion model, and heat simulator.
+- Created various 3D animations using Python including a 3D Mandelbrot Set zoom, landscape erosion model, and heat simulator.
 - Developed multiple 2D visualizations such as earthquake plots and planetary simulations.
 
 **Operating Systems and System Programming** — Fall 2022
@@ -186,7 +186,7 @@ Team Member | University of California, Berkeley
 Team Member | Diablo Valley College
 
 - Solved technical interview questions with a team to build coding knowledge.
-- Collaborated with a team to plan and design machine learning dinosaur game and Q-learning taxi deliver simulation.
+- Collaborated with a team to plan and design machine learning dinosaur game and Q-learning taxi delivery simulation.
 - Created mock Chrome Dinosaur game using Javascript and p5.js to visualize machine learning software.
 
 **DVCoders** — Aug. 2019 – Dec. 2019
