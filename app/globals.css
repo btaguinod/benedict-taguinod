@@ -135,8 +135,15 @@
   }
 
   html.js [data-js-hide],
-  html.js h1[data-js-hide-name] {
+  html.js h1[data-js-hide-name],
+  html.js [data-js-hide-mug] {
     opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html.js [data-js-hide-mug] {
+      opacity: 1;
+    }
   }
 
   ::selection {

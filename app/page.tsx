@@ -11,6 +11,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 export default function Page() {
   const containerRef = useRef<HTMLElement>(null)
+  const mugRef = useRef<SVGSVGElement>(null)
   const introRef = useRef<HTMLParagraphElement>(null)
   const nameRef = useRef<HTMLHeadingElement>(null)
   const taglineRef = useRef<HTMLParagraphElement>(null)
@@ -22,6 +23,7 @@ export default function Page() {
       const mm = gsap.matchMedia()
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.set(mugRef.current, { opacity: 0, scale: 0.8 })
         gsap.set(introRef.current, { opacity: 0 })
         gsap.set(nameRef.current, { opacity: 0, y: 14 })
         gsap.set(taglineRef.current, { opacity: 0, y: 10 })
@@ -30,7 +32,13 @@ export default function Page() {
 
         const tl = gsap.timeline({ delay: 0.1 })
 
-        tl.to(introRef.current, { opacity: 1, duration: 0.5, ease: "expo.out" })
+        tl.to(mugRef.current, {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          ease: "back.out(1.7)",
+        })
+          .to(introRef.current, { opacity: 1, duration: 0.5, ease: "expo.out" })
           .to(
             nameRef.current,
             {
@@ -58,20 +66,17 @@ export default function Page() {
           )
 
         gsap.utils.toArray<HTMLElement>("[data-section]").forEach((section) => {
-          gsap.from(
-            section,
-            {
-              opacity: 0,
-              y: 12,
-              duration: 0.7,
-              ease: "expo.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 88%",
-                once: true,
-              },
-            }
-          )
+          gsap.from(section, {
+            opacity: 0,
+            y: 12,
+            duration: 0.7,
+            ease: "expo.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 88%",
+              once: true,
+            },
+          })
         })
       })
     },
@@ -88,11 +93,26 @@ export default function Page() {
         aria-hidden="true"
         dangerouslySetInnerHTML={{
           __html:
-            '<!-- Direction contract — The Menu Board (seed 3cd9af30). THESIS: the café menu board — one board you scan in a single pass; refuses the dark-terminal portfolio default. OWN-WORLD: cream paper ground, espresso ink, matcha-sage fields and washes between 1px sage hairlines; Fraunces display, DM Sans voice, JetBrains mono tags; squared corners, no shadows. STORY: welcome in! I\'m greets first; a recruiter scans today\'s brew, the menu of work, prices-and-portion outcomes, and lands on the counter CTA — email, résumé, LinkedIn. FIRST VIEWPORT: full-height hero — greeting line, Fraunces espresso name, three-part tagline, row of squared buttons, all on cream. FORM: direction 4 of the grounded list (The Menu Board); seed key 3cd9af30; code-led, no comp is owed. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance. -->',
+            "<!-- Direction contract — The Menu Board (seed 3cd9af30). THESIS: the café menu board — one board you scan in a single pass; refuses the dark-terminal portfolio default. OWN-WORLD: cream paper ground, espresso ink, matcha-sage fields and washes between 1px sage hairlines; Fraunces display, DM Sans voice, JetBrains mono tags; squared corners, no shadows. STORY: welcome in! I'm greets first; a recruiter scans today's brew, the menu of work, prices-and-portion outcomes, and lands on the counter CTA — email, résumé, LinkedIn. FIRST VIEWPORT: full-height hero — greeting line, Fraunces espresso name, three-part tagline, row of squared buttons, all on cream. FORM: direction 4 of the grounded list (The Menu Board); seed key 3cd9af30; code-led, no comp is owed. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance. -->",
         }}
       />
       {/* Hero — the board header */}
       <section className="relative mx-auto flex min-h-svh max-w-2xl flex-col justify-center px-6 py-20">
+        {/* {(
+          <svg
+            ref={mugRef}
+            data-js-hide-mug
+            role="img"
+            aria-label="Steaming mug with code braces"
+            className="mb-5 size-16"
+            viewBox="-2.5 -2.5 105 105"
+            fill="oklch(0.398 0.094 49)"
+          >
+            <path d="m45.301 29.102c-0.30078 0-0.69922-0.10156-1-0.30078-1.1016-0.60156-1.3984-1.8984-0.89844-2.8984 0.89844-1.6992 1.1992-3.1992 0.89844-4.5-0.30078-1.3008-1.3008-2.1016-2.3984-3.1016-1.3984-1.1992-3.1992-2.8008-3.1016-5.3984 0-1.3008 0.5-2.1992 0.89844-3 0.39844-0.69922 0.69922-1.3008 0.69922-2.3984 0-0.69922-0.10156-1.5-0.30078-2.1992-0.30078-1.1016 0.30078-2.3008 1.5-2.6992 1.1016-0.30078 2.3984 0.30078 2.6992 1.5s0.5 2.3984 0.5 3.5c-0.10156 2.1016-0.69922 3.3008-1.1992 4.3008-0.30078 0.60156-0.39844 0.80078-0.39844 1.1016 0 0.60156 0.5 1 1.6016 2.1016 1.3984 1.1992 3.1016 2.6992 3.6992 5.3008 0.60156 2.3008 0.19922 4.8984-1.3008 7.6016-0.30078 0.6875-1.0977 1.0898-1.8984 1.0898z" />
+            <path d="m35 28.898c-0.30078 0-0.60156-0.10156-1-0.19922-1.1016-0.5-1.5-1.8008-1-2.8984 0.69922-1.5 0.89844-2.6992 0.60156-3.6016-0.19922-0.60156-0.60156-1.1016-1.1016-1.6992-0.89844-1.1016-2-2.3984-1.8984-4.5 0-1 0.30078-2 0.89844-2.8984 0.60156-1 2-1.3008 3-0.69922 1 0.60156 1.3008 2 0.69922 3-0.19922 0.30078-0.30078 0.5-0.30078 0.80078 0 0.39844 0.30078 0.80078 0.89844 1.6016 0.60156 0.80078 1.3984 1.6992 1.8008 3 0.69922 2 0.39844 4.3984-0.80078 7-0.29688 0.59375-0.99609 1.0938-1.7969 1.0938z" />
+            <path d="m73.102 43.5h-2.6992v-3.1992c0-2.6992-2.8984-4.5-9.6016-5.6992-5.1992-1-12-1.5-19.199-1.5-4.1016 0-8 0.19922-11.699 0.5-0.5 0-1 0.10156-1.5 0.10156-0.69922 0.10156-1.3008 0.10156-1.8984 0.19922-1.1016 0.10156-2.1016 0.30078-3.1016 0.5-1.1992 0.19922-2 1.3008-1.8008 2.5 0.19922 1.1992 1.3008 2 2.5 1.8008 0.89844-0.19922 1.8984-0.30078 2.8984-0.39844 0.60156-0.10156 1.1992-0.10156 1.8008-0.19922 0.5-0.10156 0.89844-0.10156 1.3984-0.10156 3.5-0.30078 7.3984-0.5 11.301-0.5 12.898 0 21 1.6992 23.699 2.8984-2.6992 1.1992-10.801 2.8984-23.699 2.8984-13 0-21.199-1.6992-23.801-3 0.69922-0.69922 0.80078-1.8008 0.30078-2.6016-0.60156-1-1.8984-1.3984-3-0.80078-0.30078 0.19922-0.60156 0.39844-0.89844 0.60156-1.1992 1-1.3984 2.1016-1.3984 2.8008v44.5c0 8.3008 14.801 12.699 28.801 12.699 13.996 0 28.797-4.5 28.797-12.699v-3.1992h2.6992c7.8008 0 14.199-6.3008 14.199-14.199v-9.8008c0-7.7031-6.3008-14.102-14.098-14.102zm-42.703 27.102c1.1016 0.80078 1.3984 2.3008 0.60156 3.3984-0.5 0.69922-1.1992 1-2 1-0.5 0-1-0.19922-1.3984-0.5l-6.8984-4.8984c-0.69922-0.5-1-1.1992-1-2.1016 0-0.80078 0.39844-1.6016 1.1016-2l6.8984-4.3984c1.1016-0.69922 2.6992-0.39844 3.3984 0.69922 0.69922 1.1016 0.39844 2.6992-0.69922 3.3984l-3.8008 2.3984zm17.402-9.6016-9.3008 16.301c-0.5 0.80078-1.3008 1.1992-2.1016 1.1992-0.39844 0-0.80078-0.10156-1.1992-0.30078-1.1992-0.69922-1.6016-2.1992-0.89844-3.3984l9.3008-16.301c0.69922-1.1992 2.1992-1.6016 3.3984-0.89844 1.1016 0.69922 1.5 2.1992 0.80078 3.3984zm13.398 9.3008-6.8984 4.3984c-0.39844 0.30078-0.89844 0.39844-1.3008 0.39844-0.80078 0-1.6016-0.39844-2.1016-1.1016-0.69922-1.1016-0.39844-2.6992 0.69922-3.3984l3.8008-2.3984-3.8984-2.8008c-1.1016-0.80078-1.3984-2.3008-0.60156-3.3984 0.80078-1.1016 2.3008-1.3984 3.3984-0.60156l6.8984 4.8984c0.69922 0.5 1 1.1992 1 2.1016 0.10547 0.70312-0.29687 1.4023-0.99609 1.9023zm17.801-2.8008c0 3.3008-2.6992 5.8984-5.8984 5.8984h-2.6992l-0.003906-21.699h2.6992c3.3008 0 5.8984 2.6992 5.8984 5.8984z" />
+          </svg>
+        )} */}
         <p
           ref={introRef}
           data-js-hide
@@ -104,7 +124,7 @@ export default function Page() {
           ref={nameRef}
           data-js-hide-name
           className="mb-6 text-5xl leading-tight font-bold text-[oklch(0.375_0.052_64)] sm:text-6xl"
-            style={{
+          style={{
             fontFamily: "var(--font-heading)",
             fontVariationSettings: `"WONK" 0, "SOFT" 100, "opsz" 144`,
           }}
@@ -231,15 +251,14 @@ export default function Page() {
         </p>
         <div className="mb-4 flex items-baseline gap-2">
           <span
-            className="inline-block bg-card px-2 text-sm font-bold uppercase leading-7 tracking-widest"
+            className="inline-block bg-card px-2 text-sm leading-7 font-bold tracking-widest uppercase"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Lead Engineer, Platform &amp; Learning Systems
           </span>
         </div>
         <p className="font-mono text-sm text-muted-foreground">
-          Conectado Inc. ·{" "}
-          <span className="text-foreground">2025–present</span>
+          Conectado Inc. · <span className="text-foreground">2025–present</span>
         </p>
         <p className="mt-4 mb-4 text-sm text-muted-foreground">
           Conectado builds tech-powered pathways to economic mobility.
@@ -256,8 +275,8 @@ export default function Page() {
             <span className="mt-0.5">—</span>
             <span>
               Built the AI Opportunity Backpack: bootcampers match with
-              opportunities and resources that fit what they&apos;re
-              actually after.
+              opportunities and resources that fit what they&apos;re actually
+              after.
             </span>
           </li>
           <li className="flex gap-2">
@@ -322,7 +341,8 @@ export default function Page() {
               <li className="flex gap-2">
                 <span className="mt-0.5">—</span>
                 <span>
-                  Led <span className="font-medium text-foreground">3 teams</span>{" "}
+                  Led{" "}
+                  <span className="font-medium text-foreground">3 teams</span>{" "}
                   building the platform bootcampers use to find academic and
                   career opportunities.
                 </span>
@@ -330,8 +350,8 @@ export default function Page() {
               <li className="flex gap-2">
                 <span className="mt-0.5">—</span>
                 <span>
-                  Designed and built the core application — students match
-                  with scholarships, jobs, and community resources.
+                  Designed and built the core application — students match with
+                  scholarships, jobs, and community resources.
                 </span>
               </li>
             </ul>
@@ -367,8 +387,10 @@ export default function Page() {
                 <span>
                   The entire stack is code: Terraform provisions Proxmox VMs
                   across{" "}
-                  <span className="font-medium text-foreground">4 mini PCs</span>,
-                  Ansible configures the Docker Swarm cluster on top, and a
+                  <span className="font-medium text-foreground">
+                    4 mini PCs
+                  </span>
+                  , Ansible configures the Docker Swarm cluster on top, and a
                   TrueNAS server backs persistent volumes — reproducible from
                   zero on new hardware.
                 </span>
@@ -414,7 +436,7 @@ export default function Page() {
           className="mb-8 text-2xl font-semibold"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Let&apos;s talk.
+          Thanks for stopping by!
         </h2>
         <p className="mb-8 text-muted-foreground">
           if you want to chat, my inbox is open!
