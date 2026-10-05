@@ -208,7 +208,10 @@ export default function Page() {
           (about me)
         </p>
         <p className="mb-4 text-muted-foreground">
-          Welcome to my page! I&apos;m the engineering lead at{" "}
+          Thanks for coming in!
+        </p>
+        <p className="mb-4 text-muted-foreground">
+          I lead engineering at{" "}
           <a
             href="#connectado"
             className="text-secondary underline decoration-border underline-offset-4 transition-colors hover:decoration-secondary"
@@ -436,10 +439,10 @@ export default function Page() {
           className="mb-8 text-2xl font-semibold"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Thanks for stopping by!
+          What can I get for you?
         </h2>
         <p className="mb-8 text-muted-foreground">
-          if you want to chat, my inbox is open!
+          my inbox is open, say hi anytime!
         </p>
         <div className="flex flex-wrap gap-3">
           <Button
