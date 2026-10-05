@@ -439,7 +439,7 @@ export default function Page() {
           className="mb-8 text-2xl font-semibold"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          What can I get for you?
+          What can I get you?
         </h2>
         <p className="mb-8 text-muted-foreground">
           my inbox is open, say hi anytime!
