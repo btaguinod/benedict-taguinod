@@ -1,6 +1,8 @@
+import { readFile } from "node:fs/promises"
+import path from "node:path"
 import { ImageResponse } from "next/og"
 
-export const alt = "Benedict Taguinod — web & cloud engineer"
+export const alt = "Benedict Taguinod"
 export const size = {
   width: 1200,
   height: 630,
@@ -12,25 +14,35 @@ const FOREGROUND = "#241A12"
 const MUTED = "#5C4530"
 const ACCENT = "#597928"
 
-async function loadDMSansTTF(weight: number): Promise<ArrayBuffer | null> {
-  try {
-    const css = await fetch(
-      `https://fonts.googleapis.com/css2?family=DM+Sans:wght@${weight}`,
-      { headers: { "User-Agent": "curl/8.0" } }
-    ).then((r) => r.text())
-    const url = css.match(/url\((https:[^)]+\.ttf)\)/)?.[1]
-    if (!url) return null
-    return await fetch(url).then((r) => r.arrayBuffer())
-  } catch {
-    return null
-  }
+const FONT_FILES = [
+  { file: "DMSans-Regular.ttf", weight: 400 },
+  { file: "DMSans-Bold.ttf", weight: 700 },
+] as const
+
+type LoadedFont = {
+  name: string
+  data: Buffer
+  style: "normal"
+  weight: (typeof FONT_FILES)[number]["weight"]
+}
+
+async function loadLocalFonts(): Promise<LoadedFont[]> {
+  const dir = path.join(process.cwd(), "assets", "fonts")
+  const results = await Promise.allSettled(
+    FONT_FILES.map(async ({ file, weight }): Promise<LoadedFont> => {
+      const data = await readFile(path.join(dir, file))
+      return { name: "DM Sans", data, style: "normal", weight }
+    })
+  )
+  return results
+    .filter(
+      (r): r is PromiseFulfilledResult<LoadedFont> => r.status === "fulfilled"
+    )
+    .map((r) => r.value)
 }
 
 export default async function Image() {
-  const [dmSansRegular, dmSansBold] = await Promise.all([
-    loadDMSansTTF(400),
-    loadDMSansTTF(700),
-  ])
+  const dmSansFonts = await loadLocalFonts()
 
   return new ImageResponse(
     <div
@@ -43,7 +55,7 @@ export default async function Image() {
         padding: "72px",
         backgroundColor: BACKGROUND,
         color: FOREGROUND,
-        fontFamily: dmSansRegular ? "DM Sans" : undefined,
+        fontFamily: dmSansFonts.length > 0 ? "DM Sans" : undefined,
       }}
     >
       <div
@@ -61,30 +73,13 @@ export default async function Image() {
           Benedict Taguinod.
         </div>
         <div style={{ display: "flex", fontSize: 40, color: ACCENT }}>
-          web & cloud engineer
+          lead engineer, ex-HPE, Conectado
         </div>
       </div>
     </div>,
     {
       ...size,
-      ...(dmSansRegular && dmSansBold
-        ? {
-            fonts: [
-              {
-                name: "DM Sans",
-                data: dmSansRegular,
-                style: "normal",
-                weight: 400,
-              },
-              {
-                name: "DM Sans",
-                data: dmSansBold,
-                style: "normal",
-                weight: 700,
-              },
-            ],
-          }
-        : {}),
+      ...(dmSansFonts.length > 0 ? { fonts: dmSansFonts } : {}),
     }
   )
 }

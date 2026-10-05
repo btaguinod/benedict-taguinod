@@ -5,6 +5,14 @@ import { Analytics } from "@vercel/analytics/next"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import {
+  EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site"
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -20,29 +28,58 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://benedict-taguinod.com"),
-  title: "Benedict Taguinod — web & cloud engineer",
-  description:
-    "Berkeley EECS graduate. Ex-HPE cloud developer (Go, Terraform, Kubernetes). Lead engineer at Conectado, building tech-powered pathways to economic mobility.",
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
   openGraph: {
-    title: "Benedict Taguinod — web & cloud engineer",
-    description:
-      "Berkeley EECS graduate. Ex-HPE cloud developer (Go, Terraform, Kubernetes). Lead engineer at Conectado.",
-    url: "https://benedict-taguinod.com",
-    siteName: "Benedict Taguinod",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benedict Taguinod — web & cloud engineer",
-    description:
-      "Berkeley EECS graduate. Ex-HPE cloud developer (Go, Terraform, Kubernetes). Lead engineer at Conectado.",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Benedict Taguinod",
+  email: `mailto:${EMAIL}`,
+  url: SITE_URL,
+  jobTitle: "Lead Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Conectado",
+  },
+  alumniOf: [
+    {
+      "@type": "CollegeOrUniversity",
+      name: "UC Berkeley",
+    },
+  ],
+  sameAs: [LINKEDIN_URL, GITHUB_URL],
+  knowsAbout: [
+    "Go",
+    "Terraform",
+    "Kubernetes",
+    "TypeScript",
+    "React",
+    "Next.js",
+  ],
 }
 
 export const viewport: Viewport = {
   themeColor: "#FCECD8",
+  colorScheme: "light",
 }
 
 export default function RootLayout({
@@ -70,6 +107,12 @@ export default function RootLayout({
           }}
         />
         <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
