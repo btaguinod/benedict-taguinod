@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { Fraunces, DM_Sans, JetBrains_Mono } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -68,6 +69,7 @@ export default function RootLayout({
               "matchMedia('(prefers-reduced-motion: no-preference)').matches && document.documentElement.classList.add('js')",
           }}
         />
+        <Analytics />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
